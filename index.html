@@ -1,39 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Free Website</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
-    }
-    header { border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-    .btn {
-      display: inline-block;
-      background: #0066cc;
-      color: #fff;
-      padding: 10px 18px;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Tia Shahid</title> <!-- Browser tab title -->
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    padding: 20px;
+  }
+
+  /* Tab button container */
+  .tab-bar {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+  }
+
+  /* Individual tab buttons */
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+  }
+
+  .tab-btn:hover {
+    color: #000;
+  }
+
+  /* Active tab styling */
+  .tab-btn.active {
+    color: #0066cc;
+    font-weight: bold;
+    border-bottom-color: #0066cc;
+  }
+
+  /* Tab content panels (hidden by default) */
+  .tab-panel {
+    display: none;
+    padding: 20px 0;
+  }
+
+  /* Show only the active panel */
+  .tab-panel.active {
+    display: block;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>A clean, fast, and free HTML page.</p>
-  </header>
 
-  <main>
-    <h2>About</h2>
-    <p>Edit this text to share information about yourself, your project, or your business.</p>
-    <a href="mailto:you@example.com" class="btn">Contact Me</a>
-  </main>
+  <h1>Tia Shahid</h1> <!-- On-page title -->
+
+  <!-- Tab Buttons -->
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" role="tab" onclick="openTab(event, 'overview')">Home</button>
+    <button class="tab-btn" role="tab" onclick="openTab(event, 'specs')">Specifications</button>
+    <button class="tab-btn" role="tab" onclick="openTab(event, 'reviews')">Reviews</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div id="overview" class="tab-panel active" role="tabpanel">
+    <h3>Resume</h3>
+    <iframe 
+  src="/Users/tariqshahid/Documents/Tia_A_Shahid_Resume.pdf" 
+  width="100%" 
+  height="800px" 
+  style="border: none;"
+  title="My Resume">
+</iframe>
+    <p>This is the default visible tab content.</p>
+  </div>
+
+  <div id="specs" class="tab-panel" role="tabpanel">
+    <h3>Specifications</h3>
+    <p>Details and technical specs go here.</p>
+  </div>
+
+  <div id="reviews" class="tab-panel" role="tabpanel">
+    <h3>Reviews</h3>
+    <p>Customer feedback goes here.</p>
+  </div>
+
+  <script>
+    function openTab(event, tabId) {
+      // 1. Hide all tab panels
+      document.querySelectorAll('.tab-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // 2. Remove 'active' class from all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // 3. Show the selected panel and highlight the clicked button
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
