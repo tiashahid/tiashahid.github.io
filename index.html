@@ -57,8 +57,7 @@
   <!-- Tab Buttons -->
   <div class="tab-bar" role="tablist">
     <button class="tab-btn active" role="tab" onclick="openTab(event, 'overview')">Resume</button>
-    <button class="tab-btn" role="tab" onclick="openTab(event, 'specs')">Specifications</button>
-    <button class="tab-btn" role="tab" onclick="openTab(event, 'reviews')">Reviews</button>
+    <button class="tab-btn" role="tab" onclick="openTab(event, 'contact')">Contact</button>
   </div>
 
   <!-- Tab Content -->
@@ -72,17 +71,11 @@
   title="My Resume">
 </iframe>
   </div>
-
-  <div id="specs" class="tab-panel" role="tabpanel">
-    <h3>Specifications</h3>
-    <p>Details and technical specs go here.</p>
+  <div id="contact" class="tab-panel" role="tabpanel">
+    <h3>Contact</h3>
+    <p>Email: <a href="tashahid@andrew.cmu.edu">tashahid@andrew.cmu.edu</a></p>
+    <p>Phone: <a>484-707-3479</a></p>
   </div>
-
-  <div id="reviews" class="tab-panel" role="tabpanel">
-    <h3>Reviews</h3>
-    <p>Customer feedback goes here.</p>
-  </div>
-
   <script>
     function openTab(event, tabId) {
       // 1. Hide all tab panels
